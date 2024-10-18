@@ -1,1 +1,10 @@
-<p>note-list works!</p>
+<div *ngIf="notes.length > 0">
+  These are the all lists :
+  <div *ngFor="let note of notes">
+    <h3>Title: {{ note.title }}</h3>
+    <p>Content: {{ note.content }}</p>
+    <button (click) ="editNote(note)" >Edit</button>
+    <button (click)="deleteNote(note.id)">Delete</button>
+    <hr />
+  </div>
+</div>
